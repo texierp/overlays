@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -x
-
 OVERLAYS=/sys/kernel/config/device-tree/overlays
 FIRMWARE=/lib/firmware/nextthingco/chip
 
@@ -13,7 +11,7 @@ add()
         fi
 
         mkdir $OVERLAYS/$1
-        cat $(basename $FIRMWARE/*$1*) > $OVERLAYS/$i/dtbo
+        cat $FIRMWARE/*$1* > $OVERLAYS/$i/dtbo
 }
 
 remove()
